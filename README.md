@@ -65,6 +65,7 @@ Ans:
 Memoization is a technique used to improve the performance of recursive functions by storing the results of function calls and reusing them when the same input is encountered again.
 
 Drawbacks of Memoization:
+
 1.Increased Memory Usage: it requires additional memory to store previously computed results.
 
 2.Cache Management: depending on the programming language or memoization, the cache might not automatically clear itself, potentially causing memory issues.
