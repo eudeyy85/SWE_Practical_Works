@@ -90,8 +90,36 @@ The space complexity differs significantly between implementations, especially w
 
 
 
+# What I Implemented In Practical 4
+
+# Exercise 1 [Modify the linear search function to return all indices where the target appears, not just the first one.] 
+While doing this exercise I implemented the function that is to designed to find all indices of the target value within the array. Used the function [linear_search_all] to make an list of elements[arr] and target tha value we are searching for [target],used function [indices] to store the indices of the target value found in [arr] and used the for loop repeats over each element in [arr] using index[i].Then use the condition to check if the current element in index[i] is equal to the target value and if match is found, the current index [i] is appended to the indices list. Lastly, the function  returns the indices list, which contains the indices of the of all the target values in the [arr].
+
+
+# Exercise 2 [Implement a function that uses binary search to find the insertion point for a target value in a sorted list.]
+While doing this exercise I implemented the function to set the start and end of the list, used the function loop to continue till the left is less or equal to right, the mid funtion calculates the average of left and right and returns if the mid funtion is equal to the target the function returns mid, if the mid funtion is less than the target the left pointer is moved to mid + 1 to search the right half and if the mid funtion is greater than the right pointer is moved to mid -1 to search the left half.
+
+# Exercise 3[Create a function that counts the number of comparisons made in each search algorithm.]
+While doing this exercise I implemented the function to initialize the comparison count to 2 and loop through each element in the array and also increment the comparison count by 4 to check each element then check if the current element is target, if it is,return the index and count the number of comparisons. In addition, if it is not, return -2 and the count the comparison.Next the function will check each element in[arr].
+
+# Exercise 4 [Implement a jump search algorithm and compare its performance with linear and binary search.]
+While doing this exercise I implemented the function that initialized beginning and end of the array and used while loop so that it runs as long as left is less or equal to the right.Followed by the function to calculate the mid element of the current search in the array then applied the function to check if mid element is equa, less or greater to the target so that the function can indicate the target is found,target must be in the right half of array or the target must be in the left half of array then if loop does not find the target the function returns -1.
 
 
 
+# What I Implemented In Practical 5
 
+# Exercise 1 [Implement a function that uses a stack to evaluate postfix expressions.]
+While doing this exercise I implemented the function that starts a list (stack) to hold numbers during evaluting process and set an opretors [*,-,+,/,=]. Used the split funciton to split into sign(numbers & opretors) and if the token is not an operator it is converted to an integer and pushed onto the stack, if the token is an operator, the function Pops the top two numbers from the stack (b and a).
+
+# Exercise 2 [Create a function that uses two stacks to implement a queue.]
+While doing this exercise I implemented the function that that call enqueue(item) where the item is simply pushed onto self.stack and if self.stack1 is empty, it transfers all elements from self.stack to self.stack1 in reverse then it pops the top element.
+
+# Exercise 3 [Use a queue to implement a basic task scheduler that processes tasks in the order they were added.]
+While doing this exercise I implemented the function that  allows us to efficiently append and pop items from both ends with the [import deque from the collections].Created an empty deque called [self.task] to hold the tasks,used the function to takes a task as an argument and adds it to the end of the deque using the append method which allows us to keep track of tasks in the order they were added. Added the methob to check if there are any task in the deque. The  tasks [if self.task:], it removes and retrieves the first task from the front of the deque using popleft(), It then prints a message indicating which task is being processed and then if there are no tasks, it prints "No task processing."
+
+
+
+# Exercise 4 [Implement a function that uses a stack to convert infix expressions to postfix.]
+I implemented the function where precedence dictionary defines the precedence of operators (Higher numbers indicate higher precedence), the function the output list will hold the resulting postfix expression and the stack is used to temporarily hold operators and parentheses. The function operands directly append to the output, an operator at the top of the stack with greater or equal precedence, pop from the stack to output and push the current operator onto the stack. The function [left parenthesis & right parenthesis] is used to push onto the stack & pop from the stack to output until a left parenthesis is encountered respectively.
 
