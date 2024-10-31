@@ -123,3 +123,7 @@ While doing this exercise I implemented the function that  allows us to efficien
 # Exercise 4 [Implement a function that uses a stack to convert infix expressions to postfix.]
 I implemented the function where precedence dictionary defines the precedence of operators (Higher numbers indicate higher precedence), the function the output list will hold the resulting postfix expression and the stack is used to temporarily hold operators and parentheses. The function operands directly append to the output, an operator at the top of the stack with greater or equal precedence, pop from the stack to output and push the current operator onto the stack. The function [left parenthesis & right parenthesis] is used to push onto the stack & pop from the stack to output until a left parenthesis is encountered respectively.
 
+# What I Implemented In Practical 5
+
+# Exercise 1 [Implement a method to find the middle element of the linked list.]
+I created the class grounp(node) to represent each individual item in the linked list where the list stores the attributes of the (value) to store data for the node and the (next) points to the next node in the list but I used none so it doesn't link to any other node yet. Made the (list) class to manage the entire linked list and added element to the list using append method which adds a new node to the end of the list. Finally, the find_method finds the middle element of the linked list.
