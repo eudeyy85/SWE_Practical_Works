@@ -1,0 +1,183 @@
+#Exercise 1
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class linkedlist:
+    def __init__(self):
+        self.head = None
+
+    def append(self, value):
+        if not self.head:
+            self.head = Node(value)
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = Node(value)
+
+    def find_middle(self):
+        slow = self.head
+        fast = self.head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        return slow.value if slow else None
+
+linked_list = linkedlist()
+linked_list.append(2)
+linked_list.append(8)
+linked_list.append(1)
+linked_list.append(6)
+linked_list.append(9)
+
+middle_value = linked_list.find_middle()
+print("Middle element:", middle_value) 
+
+#Exercise 2
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class linkedlist:
+    def __init__(self):
+        self.head = None
+
+    def append(self, value):
+        if not self.head:
+            self.head = Node(value)
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = Node(value)
+
+    def has_cycle(self):
+        slow = self.head
+        fast = self.head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow == fast:
+                return True
+
+        return False
+
+linked_list = linkedlist()
+linked_list.append(1)
+linked_list.append(2)
+linked_list.append(3)
+linked_list.append(4)
+linked_list.append(5)
+
+print("Has cycle:", linked_list.has_cycle()) 
+linked_list.head.next.next.next.next.next = linked_list.head.next.next  
+print("Has cycle:", linked_list.has_cycle())  
+
+#Exercise 3
+class Node:
+    def __init__(self, value=0, next=None):
+        self.value = value
+        self.next = next
+
+class linkedlist:
+    def __init__(self):
+        self.head = None
+
+    def append(self, value):
+        if not self.head:
+            self.head = Node(value)
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = Node(value)
+
+    def remove_duplicates(self):
+        if not self.head:
+            return
+        
+        current = self.head
+        seen_values = set([current.value])
+        
+        while current.next:
+            if current.next.value in seen_values:
+                current.next = current.next.next  
+            else:
+                seen_values.add(current.next.value)
+                current = current.next  
+
+    def print_list(self):
+        current = self.head
+        while current:
+            print(current.value, end=" -> ")
+            current = current.next
+        print("None")
+
+linked_list = linkedlist()
+linked_list.append(2)
+linked_list.append(4)
+linked_list.append(2)
+linked_list.append(4)
+linked_list.append(2)
+linked_list.append(8)
+
+print("Original list:")
+linked_list.print_list()
+linked_list.remove_duplicates()
+print("List after removing duplicates:")
+linked_list.print_list()
+
+#Exercise 4
+class Node:
+    def __init__(self, value=0, next=None):
+        self.value = value
+        self.next = next
+
+def merge_sorted_lists(list1, list2):
+    dummy = Node()
+    current = dummy
+
+    while list1 and list2:
+        if list1.value < list2.value:
+            current.next = list1
+            list1 = list1.next
+        else:
+            current.next = list2
+            list2 = list2.next
+        current = current.next
+    
+    if list1:
+        current.next = list1
+    elif list2:
+        current.next = list2
+    return dummy.next
+
+def create_linked_list(arr):
+    if not arr:
+        return None
+    head = Node(arr[0])
+    current = head
+    for val in arr[1:]:
+        current.next = Node(val)
+        current = current.next
+    return head
+
+def print_linked_list(head):
+    while head:
+        print(head.value, end=" -> ")
+        head = head.next
+    print("None")
+
+list1 = create_linked_list([1, 3, 5])
+list2 = create_linked_list([2, 4, 6])
+merged_list = merge_sorted_lists(list1, list2)
+print_linked_list(merged_list)
+
+
