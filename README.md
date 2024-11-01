@@ -1,6 +1,6 @@
 # SWE_Practical_Works
 
-# What I Implemented In Practical 2
+## What I Implemented In Practical 2
 
 # Exercise 1 [Modify the program to count the number of unique words in the text.]
 While doing this exercise I implemented funtion that splits the input text(sample.txt) into list of individual words and spacing it.Next created a set  the list of words that contain the unique elements and remove the duplicates word and then used the function [len(unique_words)] to calculates the number of elements in the set, which is the count of unique words.
@@ -15,8 +15,7 @@ While doing this exercise I implemented function to split input text like in abo
 While doing this exercise I implemented function [sum(len(word)] for word in words to calculate the total length of all the words, used [average_length = total_length / len(words)] calculates the average word length by dividing the total length by the number of words. Even used [longer_words_count = sum(1 for word in words if len(word) > average_length)] counts the number of words longer than the average length using a generator expression. Moreover, used the function [percentage = (longer_words_count / len(words)) * 100] to calculate the percentage of longestp ppppppppppwords by dividing the count of long words by the total number of words and multiplying by 100.
 
 
-
-# What I Implemented In Practical 3
+## What I Implemented In Practical 3
 
 # Exercise 1 [Modify the iterative function to return a list of Fibonacci numbers up to n, instead of just the nth number.]
 In this exercise I implemented the function to generate Fibonacci sequences from 20 to 25 upto specified length.It starts a list with the first two terms and alliteratively calculates the next term by adding the previous two terms and then it returns the funtion to the the first n terms of the sequence.
@@ -89,12 +88,10 @@ The space complexity differs significantly between implementations, especially w
 4.Iterative Implementations: that don’t store intermediate results or large data structures use constant space and they that don’t store intermediate results or large data structures use constant space.
 
 
-
-# What I Implemented In Practical 4
+## What I Implemented In Practical 4
 
 # Exercise 1 [Modify the linear search function to return all indices where the target appears, not just the first one.] 
 While doing this exercise I implemented the function that is to designed to find all indices of the target value within the array. Used the function [linear_search_all] to make an list of elements[arr] and target tha value we are searching for [target],used function [indices] to store the indices of the target value found in [arr] and used the for loop repeats over each element in [arr] using index[i].Then use the condition to check if the current element in index[i] is equal to the target value and if match is found, the current index [i] is appended to the indices list. Lastly, the function  returns the indices list, which contains the indices of the of all the target values in the [arr].
-
 
 # Exercise 2 [Implement a function that uses binary search to find the insertion point for a target value in a sorted list.]
 While doing this exercise I implemented the function to set the start and end of the list, used the function loop to continue till the left is less or equal to right, the mid funtion calculates the average of left and right and returns if the mid funtion is equal to the target the function returns mid, if the mid funtion is less than the target the left pointer is moved to mid + 1 to search the right half and if the mid funtion is greater than the right pointer is moved to mid -1 to search the left half.
@@ -106,8 +103,7 @@ While doing this exercise I implemented the function to initialize the compariso
 While doing this exercise I implemented the function that initialized beginning and end of the array and used while loop so that it runs as long as left is less or equal to the right.Followed by the function to calculate the mid element of the current search in the array then applied the function to check if mid element is equa, less or greater to the target so that the function can indicate the target is found,target must be in the right half of array or the target must be in the left half of array then if loop does not find the target the function returns -1.
 
 
-
-# What I Implemented In Practical 5
+## What I Implemented In Practical 5
 
 # Exercise 1 [Implement a function that uses a stack to evaluate postfix expressions.]
 While doing this exercise I implemented the function that starts a list (stack) to hold numbers during evaluting process and set an opretors [*,-,+,/,=]. Used the split funciton to split into sign(numbers & opretors) and if the token is not an operator it is converted to an integer and pushed onto the stack, if the token is an operator, the function Pops the top two numbers from the stack (b and a).
@@ -118,12 +114,11 @@ While doing this exercise I implemented the function that that call enqueue(item
 # Exercise 3 [Use a queue to implement a basic task scheduler that processes tasks in the order they were added.]
 While doing this exercise I implemented the function that  allows us to efficiently append and pop items from both ends with the [import deque from the collections].Created an empty deque called [self.task] to hold the tasks,used the function to takes a task as an argument and adds it to the end of the deque using the append method which allows us to keep track of tasks in the order they were added. Added the methob to check if there are any task in the deque. The  tasks [if self.task:], it removes and retrieves the first task from the front of the deque using popleft(), It then prints a message indicating which task is being processed and then if there are no tasks, it prints "No task processing."
 
-
-
 # Exercise 4 [Implement a function that uses a stack to convert infix expressions to postfix.]
 I implemented the function where precedence dictionary defines the precedence of operators (Higher numbers indicate higher precedence), the function the output list will hold the resulting postfix expression and the stack is used to temporarily hold operators and parentheses. The function operands directly append to the output, an operator at the top of the stack with greater or equal precedence, pop from the stack to output and push the current operator onto the stack. The function [left parenthesis & right parenthesis] is used to push onto the stack & pop from the stack to output until a left parenthesis is encountered respectively.
 
-# What I Implemented In Practical 5
+
+## What I Implemented In Practical 5
 
 # Exercise 1 [Implement a method to find the middle element of the linked list.]
 I created the class grounp(node) to represent each individual item in the linked list where the list stores the attributes of the (value) to store data for the node and the (next) points to the next node in the list but I used none so it doesn't link to any other node yet. Made the (list) class to manage the entire linked list and added element to the list using append method which adds a new node to the end of the list. Finally, the find_method finds the middle element of the linked list.
@@ -136,3 +131,18 @@ Implemented the method appends a new node with the specified value to the end of
 
 # Exercise 4 [Add a method to merge two sorted linked lists into a single sorted linked list.]
 implemented the merge_sorted_lists function to takes two sorted linked lists and merges them into a single sorted linked list, while loop continues as long as there are nodes in both list1 and list2, if list1's current node has a smaller value, we set current.next to list1 otherwise, we set current.next to list2. If one list is exhausted but the other still has nodes, we append all remaining nodes from that list to current.next since the list is already sorted, no further sorting is needed. The merged list starts at dummy.next, as dummy itself is an empty placeholder. Next the The merged list starts at dummy.next, as dummy itself is an empty placeholder and the while loop traverses each node until head is None, indicating the end of the list and also once the entire list is printed, it outputs None to signify the end.
+
+
+## What I Implemented In Practical 5
+
+# Exercise 1 [Implement a method to find the middle element of the linked list.]
+Implemented the function if head is None (empty list), return None and slow and fast pointers both start at head which while loop fast and fast.next are not None, move slow one step forward (slow = slow.next) and fast two steps forward (fast = fast.next.next) which means slow moves at half the speed of fast, so when fast reaches the end of the list, slow will be in the middle. When the loop ends, slow will be pointing to the middle node and creating the linked list and finging middle node.
+
+# Exercise 2 [Implement a method to find the middle element of the linked list.]
+Implemented the function to checks whether a linked list has a cycle where parameter akes one parameter, head, which is the first node of the linked list and slow variable( pointer that moves one step at a time) & fast variable(pointer that moves two steps at a time). The while fast and fast.next loop continues as long as fast and fast.next are not None, which means it haven't reached the end of the list. If at any point slow equals fast, it indicates that there is a cycle in the list and if a cycle is detected, the function returns True and then if the loop terminates without finding a cycle it returns False, indicating that the linked list does not have a cycle. Since the linked list created (3 -> 2) does not have a cycle (the next of node2 is None), the output of print(has_cycle(node1)) will be False.
+
+# Exercise 3 [Implement a method to remove duplicates from an unsorted linked list.]
+I implement a method to remove duplicates values from the linked list and iIf the head of the list is None, that means there are no nodes, so it just returns None and if head of the list is None, that means there are no nodes, so it just returns None. then start by adding the first node’s value to the set, as it’s the first we encounter. The loop will continue as long as there is a next node to look at. When we reach the end of the list, current.next will be None, and the loop will stop. The function is to check if the next node’s value is in the set and remove the duplicate. If its not duplicate, it add the value of the next node to our set of seen values.
+
+# Exercise 4 [Add a method to merge two sorted linked lists into a single sorted linked list.]
+I implemented merge_sorted_list function merges two sorted linked lists into one sorted linked list then continue looping as long as both lists have nodes. If the value of the current node in list1 is smaller than that in list2 then attach list1 to the merged list (current.next = list1) and move the list1 pointer to the next node (list1 = list1.next).If the value in list2 is smaller or equal, attach list2 to the merged list and move the list2 pointer to its next node. After that if there are remaining nodes in either list1 or list2, we attach them to the end of the merged list.Finally, we return the merged list starting from the node after the dummy node (dummy.next). The function creates a linked list from a list of values(create_linked_list(values)). Used the function(print_linked_list), prints the entire linked list in a readable format.Moreover, We create two sorted linked lists from two lists of values: list1 with values [0,2,4] and list2 with values [1,3,5] and merge_two_sorted_lists function to merge list1 and list2. The result is stored in merged_list then print the merged linked list.
