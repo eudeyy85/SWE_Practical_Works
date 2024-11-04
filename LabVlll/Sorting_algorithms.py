@@ -101,9 +101,9 @@ def bubble_sort(arr):
     n = len(arr)
     for i in range(n):
         swap = False  
-        for j in range(0, n - i - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]  
+        for a in range(0, n - i - 1):
+            if arr[a] > arr[a + 1]:
+                arr[a], arr[a + 1] = arr[a + 1], arr[a]  
                 swap = True  
         if not swap:
             break  
@@ -111,3 +111,54 @@ def bubble_sort(arr):
 
 arr = [9, 1, 6, 3, 12]
 print("The sorted array:", bubble_sort(arr))
+
+# Exercise 3
+def sort(arr, left, right):
+    for a in range(left + 1, right + 1):
+        key = arr[a]
+        b = a - 1
+        while b >= left and arr[b] > key:
+            arr[b + 1] = arr[b]
+            b -= 1
+        arr[b + 1] = key
+
+def merge(arr, left, mid, right):
+    left_half = arr[left:mid + 1]
+    right_half = arr[mid + 1:right + 1]
+    
+    a = b = 0
+    k = left
+    
+    while a < len(left_half) and b < len(right_half):
+        if left_half[a] <= right_half[b]:
+            arr[k] = left_half[a]
+            a += 1
+        else:
+            arr[k] = right_half[b]
+            b += 1
+        k += 1
+    
+    while a < len(left_half):
+        arr[k] = left_half[a]
+        a += 1
+        k += 1
+    
+    while b < len(right_half):
+        arr[k] = right_half[b]
+        b += 1
+        k += 1
+
+def merge_sort(arr, left, right, min_size=10):
+    if left < right:
+        if right - left + 1 <= min_size:
+            sort(arr, left, right)
+        else:
+            mid = (left + right) // 2
+            merge_sort(arr, left, mid, min_size)
+            merge_sort(arr, mid + 1, right, min_size)
+            merge(arr, left, mid, right)
+arr = [48, 29, 43, 4, 8, 92, 12]
+merge_sort(arr, 0, len(arr) - 1)
+print("Sorted array:", arr)
+
+# Exercise 4
