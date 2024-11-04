@@ -20,11 +20,11 @@ def bfs_shortest_path(graph, start, goal):
     return None
 
 graph = {
-    'A': ['B', 'C'],
-    'B': ['A', 'D', 'E'],
-    'C': ['A', 'F'],
+    'A': ['A', 'D'],
+    'B': ['A', 'C', 'E'],
+    'C': ['B', 'F'],
     'D': ['B'],
-    'E': ['B', 'F'],
+    'E': ['B', 'D'],
     'F': ['C', 'E']
 }
 
